@@ -6,22 +6,4 @@ Welcome to your new app.
 
 <br />
 <br />
-<label>Segundo Incremento:</label>
-<input type="number" @bind="Incremento2" />
-<button class="btn btn-outline-primary" @onclick="Incrementar2">Contador 2</button>
-<p>Cuenta actual: @segundoContador</p>
 
-
-<SurveyPrompt Title="How is Blazor working for you?" />
-
-@code{
-
-    private int segundoContador = 0;
-    [Parameter]
-    public int Incremento2 { get; set; }
-
-    private void Incrementar2()
-    {
-        segundoContador += Incremento2;
-    }
-}

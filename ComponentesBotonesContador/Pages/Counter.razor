@@ -2,9 +2,6 @@
 
 <h1>Counter</h1>
 
-<p>Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 <br />
 <br />
 <br />
@@ -13,20 +10,57 @@
 <button class="btn btn-outline-primary" @onclick="IncrementarContador">Contador 1</button>
 <p>Cuenta actual: @primerContador</p>
 
-@code {
-    private int currentCount = 0;
-    private int primerContador = 0;
+<br />
+<br />
+<br />
+<label>Segundo Incremento:</label>
+<input type="number" @bind="Incremento2" />
+<button class="btn btn-outline-primary" @onclick="Incrementar2">Contador 2</button>
+<p>Cuenta actual: @segundoContador</p>
 
+<br />
+<br />
+<br />
+<label>Tercer Incremento:</label>
+<input type="number" @bind="Incremento3" />
+<button class="btn btn-outline-primary" @onclick="Incrementar3">Contador 3</button>
+<p>Cuenta actual: @tercerIncremento</p>
+
+@code{
+    private int primerContador = 0;
+    private int segundoContador = 0;
+    private int tercerIncremento;
+   
     [Parameter]
     public int Incremento { get; set; }
-
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
+    
+    [Parameter]
+    public int Incremento2 { get; set; }
+    
+    [Parameter]
+    public int Incremento3 { get; set; }
 
     private void IncrementarContador()
     {
         primerContador += Incremento;
     }
+
+    private void Incrementar2()
+    {
+        segundoContador += Incremento2;
+    }
+
+    private void Incrementar3()
+    {
+        tercerIncremento += Incremento3;
+    }
+
+
+
+
+
+
+
+
+
 }
