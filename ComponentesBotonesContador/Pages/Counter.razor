@@ -5,12 +5,28 @@
 <p>Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<br />
+<br />
+<br />
+<label>Incremento:</label>
+<input type="number" @bind="Incremento" />
+<button class="btn btn-outline-primary" @onclick="IncrementarContador">Contador 1</button>
+<p>Cuenta actual: @primerContador</p>
 
 @code {
     private int currentCount = 0;
+    private int primerContador = 0;
+
+    [Parameter]
+    public int Incremento { get; set; }
 
     private void IncrementCount()
     {
         currentCount++;
+    }
+
+    private void IncrementarContador()
+    {
+        primerContador += Incremento;
     }
 }
